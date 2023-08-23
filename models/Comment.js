@@ -11,17 +11,12 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        post_content: {
+        comment_content: {
             type: DataTypes.STRING,
         },
         author: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        date_created: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW,
         },
         post_id: {
             type: DataTypes.INTEGER,
@@ -29,7 +24,12 @@ Comment.init(
                 model: "post",
                 key: "id"
             }
-        }
+        },
+        date_created: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
+        },
     },
     {
         sequelize,
