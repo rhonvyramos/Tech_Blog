@@ -6,16 +6,26 @@ class Post extends Model {};
 Post.init(
     {
         id: {
-
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
         },
         title: {
-
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        post_content: {
+            type: DataTypes.STRING,
         },
         author: {
-
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         date_created: {
-
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
         }
     },
     {
